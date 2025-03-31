@@ -16,6 +16,11 @@
             text-align: center;
             margin-top: 50px;
         }
+        #chatContainer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
     </style>
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 </head>
@@ -24,9 +29,13 @@
     <h1>Welcome to CCC Virtual Advisor</h1>
     <p>Click the chat button in the corner to connect with our support team.</p>
 
+    <!-- Explicit Chat Container -->
+    <div id="chatContainer"></div>
+
     <script type='text/javascript'>
         window.addEventListener("load", function() {
             embedded_svc.settings.displayHelpButton = true;
+            embedded_svc.settings.targetElement = 'chatContainer';
             embedded_svc.settings.language = '';
 
             embedded_svc.settings.enabledFeatures = ['LiveAgent'];
