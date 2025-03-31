@@ -30,13 +30,13 @@
     <h1>Welcome to CCC Virtual Advisor</h1>
     <p>Click the chat button in the corner to connect with our support team.</p>
 
-    <!-- Explicit Salesforce Chat Container -->
+    <!-- Chat Container -->
     <div id="chatContainer"></div>
 
     <script type='text/javascript'>
         window.addEventListener("load", function() {
             embedded_svc.settings.displayHelpButton = true;
-            embedded_svc.settings.targetElement = "chatContainer";
+            embedded_svc.settings.targetElement = document.getElementById("chatContainer");
             embedded_svc.settings.language = '';
 
             embedded_svc.settings.enabledFeatures = ['LiveAgent'];
