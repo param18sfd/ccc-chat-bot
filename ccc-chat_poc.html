@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <title>CCC Virtual Advisor</title>
     <style type='text/css'>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #chatContainer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 9999;
+        }
         .embeddedServiceHelpButton .helpButton .uiButton {
             background-color: #005290;
             font-family: "Arial", sans-serif;
         }
         .embeddedServiceHelpButton .helpButton .uiButton:focus {
             outline: 1px solid #005290;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
         }
     </style>
     <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
@@ -24,10 +30,15 @@
     <h1>Welcome to CCC Virtual Advisor</h1>
     <p>Click the chat button in the corner to connect with our support team.</p>
 
+    <!-- Explicit chat container -->
+    <div id="chatContainer"></div>
+
     <script type='text/javascript'>
         var initESW = function(gslbBaseURL) {
             embedded_svc.settings.displayHelpButton = true;
             embedded_svc.settings.language = '';
+
+            embedded_svc.settings.targetElement = document.getElementById("chatContainer");
 
             embedded_svc.settings.enabledFeatures = ['LiveAgent'];
             embedded_svc.settings.entryFeature = 'LiveAgent';
