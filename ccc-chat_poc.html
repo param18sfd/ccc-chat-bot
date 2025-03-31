@@ -1,64 +1,64 @@
 <!DOCTYPE html>
-<html lang=\"en\">
+<html lang="en">
 <head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCC Virtual Advisor</title>
     <style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #005290;
-		font-family: \"Arial\", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #005290;
-	}
-
-	body {
-		font-family: Arial, sans-serif;
-		text-align: center;
-		margin-top: 50px;
-	}
-	</style>
+        .embeddedServiceHelpButton .helpButton .uiButton {
+            background-color: #005290;
+            font-family: "Arial", sans-serif;
+        }
+        .embeddedServiceHelpButton .helpButton .uiButton:focus {
+            outline: 1px solid #005290;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+    <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 </head>
 <body>
     <h1>Welcome to CCC Virtual Advisor</h1>
     <p>Click the chat button in the corner to connect with our support team.</p>
 
     <script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true;
-		embedded_svc.settings.language = '';
+        var initESW = function(gslbBaseURL) {
+            embedded_svc.settings.displayHelpButton = true;
+            embedded_svc.settings.language = '';
 
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
+            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+            embedded_svc.settings.entryFeature = 'LiveAgent';
 
-		embedded_svc.init(
-			'https://orgfarm-55af48a891-dev-ed.develop.my.salesforce.com',
-			'https://orgfarm-55af48a891-dev-ed.develop.my.salesforce-sites.com/ESWCCCWebChat1743097820841vforcesite',
-			gslbBaseURL,
-			'00DgL000001GSvq',
-			'CCC_Support_Team',
-			{
-				baseLiveAgentContentURL: 'https://c.la11-core1.sfdc-58ktaz.salesforceliveagent.com/content',
-				deploymentId: '572gL0000012lEb',
-				buttonId: '573gL000000NbgS',
-				baseLiveAgentURL: 'https://d.la11-core1.sfdc-58ktaz.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'CCC_Support_Team',
-				isOfflineSupportEnabled: true
-			}
-		);
-	};
+            embedded_svc.init(
+                'https://orgfarm-55af48a891-dev-ed.develop.my.salesforce.com',
+                'https://orgfarm-55af48a891-dev-ed.develop.my.salesforce-sites.com/ESWCCCWebChat1743097820841vforcesite',
+                gslbBaseURL,
+                '00DgL000001GSvq',
+                'CCC_Support_Team',
+                {
+                    baseLiveAgentContentURL: 'https://c.la11-core1.sfdc-58ktaz.salesforceliveagent.com/content',
+                    deploymentId: '572gL0000012lEb',
+                    buttonId: '573gL000000NbgS',
+                    baseLiveAgentURL: 'https://d.la11-core1.sfdc-58ktaz.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'CCC_Support_Team',
+                    isOfflineSupportEnabled: true
+                }
+            );
+        };
 
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://orgfarm-55af48a891-dev-ed.develop.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
-	</script>
+        if (!window.embedded_svc) {
+            var s = document.createElement('script');
+            s.setAttribute('src', 'https://orgfarm-55af48a891-dev-ed.develop.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+            s.onload = function() {
+                initESW(null);
+            };
+            document.body.appendChild(s);
+        } else {
+            initESW('https://service.force.com');
+        }
+    </script>
 </body>
 </html>
